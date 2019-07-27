@@ -1,0 +1,34 @@
+
+<input id="vreg" class="w3-input w3-border"
+
+<input id="vbrand" class="w3-input w3-border"
+
+<input id="vmodel" class="w3-input w3-border"
+
+<input id="vcolour" class="w3-input w3-border"
+
+<textarea id="vdescribe" class="w3-input w3-border" 
+
+<select id="vcategory" name="vcategory">
+
+<select id="vfueltype" name="vfueltype">
+
+<input id="venginesize" class="w3-input w3-border"
+
+<input id="vvin" class="w3-input w3-border"
+
+<label>Photo</label>
+
+<input id="vextra1" class="w3-input w3-border"
+
+<input id="vextra2" class="w3-input w3-border"
+
+<input id="vextra3" class="w3-input w3-border"
+
+<input id="vextra4" class="w3-input w3-border"
+
+<input id="vaddress1" class="w3-input w3-border"
+
+<input id="vpostcode" class="w3-input w3-border"
+
+<input id="vid" class="w3-input w3-border"

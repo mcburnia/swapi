@@ -1,0 +1,28 @@
+
+body {font-family: 'Varela Round', sans-serif;}
+
+#button1 {color:blue;}
+
+.home-check-list {
+    list-style: none;
+    padding-left: 0;
+}
+.home-check-list li {
+    position: relative;
+    padding-left: 20px;
+}
+.home-check-list li:before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    background-image: url('../Images/orangecheck.gif');
+    background-size: cover;
+    background-position: center;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.w3-button {width:50px}
+.w3-btn {width:50px;}
