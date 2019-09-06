@@ -1,34 +1,61 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:8889
+-- Generation Time: Aug 28, 2019 at 12:14 PM
+-- Server version: 5.7.25
+-- PHP Version: 7.3.1
 
-<input id="vreg" class="w3-input w3-border"
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
-<input id="vbrand" class="w3-input w3-border"
+--
+-- Database: `swapi-users`
+--
 
-<input id="vmodel" class="w3-input w3-border"
+-- --------------------------------------------------------
 
-<input id="vcolour" class="w3-input w3-border"
+--
+-- Table structure for table `_swapi_booking`
+--
+DROP TABLE IF EXISTS `_swapi_booking`;
+CREATE TABLE `_swapi_booking` (
+  `id` int(11) NOT NULL,
+  `duration` int(11) NOT NULL,
+  `distance` int(11) NOT NULL,
+  `allrisks` tinyint(1) NOT NULL,
+  `drivername` varchar(64) NOT NULL,
+  `driversurname` varchar(64) NOT NULL,
+  `driveremail` varchar(64) NOT NULL,
+  `startdate` datetime NOT NULL,
+  `enddate` datetime NOT NULL,
+  `delivery` tinyint(1) NOT NULL,
+  `address1` varchar(64),
+  `address2` varchar(64),
+  `priceagreed` decimal(22, 2) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `vehicleid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-<textarea id="vdescribe" class="w3-input w3-border" 
+--
+-- Indexes for dumped tables
+--
 
-<select id="vcategory" name="vcategory">
+--
+-- Indexes for table `_swapi_booking`
+--
+ALTER TABLE `_swapi_booking`
+  ADD PRIMARY KEY (`id`);
 
-<select id="vfueltype" name="vfueltype">
+--
+-- AUTO_INCREMENT for dumped tables
+--
 
-<input id="venginesize" class="w3-input w3-border"
+--
+-- AUTO_INCREMENT for table `_swapi_booking`
+--
+ALTER TABLE `_swapi_booking`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
-<input id="vvin" class="w3-input w3-border"
 
-<label>Photo</label>
-
-<input id="vextra1" class="w3-input w3-border"
-
-<input id="vextra2" class="w3-input w3-border"
-
-<input id="vextra3" class="w3-input w3-border"
-
-<input id="vextra4" class="w3-input w3-border"
-
-<input id="vaddress1" class="w3-input w3-border"
-
-<input id="vpostcode" class="w3-input w3-border"
-
-<input id="vid" class="w3-input w3-border"

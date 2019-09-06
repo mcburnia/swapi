@@ -15,6 +15,7 @@
     		crossorigin='anonymous'>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="swapi.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- our personalised css style here - either internal style tags or link to an external css sheet-->
 	<link rel="stylesheet" href="css/swapi.css">
@@ -30,14 +31,15 @@
     <!-- Sidebar -->
     <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
         <button onclick="w3_close()" class="w3-bar-item w3-large">Cerrar &times;</button>
-        <a href="#" class="w3-bar-item w3-button">Sobre nosotros</a>
-        <a href="#" class="w3-bar-item w3-button">Vehículos</a>
-        <a href="#" class="w3-bar-item w3-button">Login</a>
-        <a href="#" class="w3-bar-item w3-button">Registro</a>
+        <a onclick="w3_close()" href="#" class="w3-bar-item w3-button">Sobre nosotros</a>
+        <a onclick="w3_close()" href="#" class="w3-bar-item w3-button">Vehículos</a>
+        <a onclick="w3_close()" href="customer.php" class="w3-bar-item w3-button">Customer Login</a>
+        <a onclick="w3_close()" href="dealer.php" class="w3-bar-item w3-button">Dealer Login</a>
+        <a onclick="w3_close()" href="#" class="w3-bar-item w3-button">Registro</a>
     </div>
   
     <div class="w3-container w3-left">
-        <p><img src="Images/logo_v6.png" width="125"/></p>
+        <p><a href="swapi.php"><img src="Images/logo_v6.png" width="125"/></a></p>
     </div>
     <div class="w3-container w3-right">
         <!-- menu -->
@@ -120,17 +122,17 @@
     
     <div class="w3-container">
     	<div class=w3-card>
-    	<div class="w3-row-padding">
-            <div class="w3-col s3"><img class="w3-image" src="images/marques/0000_concesionario-bmw-barcelona.jpg"></div>
-            <div class="w3-col s3"><img class="w3-image" src="images/marques/0000_concesionario-peugeot-barcelona.png"></div>
-            <div class="w3-col s3"><img class="w3-image" src="images/marques/0000_concesionario-nissan-barcelona.png"></div>
-            <div class="w3-col s3"><img class="w3-image" src="images/marques/0000_concesionario-toyota-barcelona.jpg"></div>
+    	<div class="w3-bar w3-centre">
+            <div class="w3-bar-item"><img class="w3-image" src="images/marques/0000_concesionario-bmw-barcelona.jpg"></div>
+            <div class="w3-bar-item"><img class="w3-image" src="images/marques/0000_concesionario-peugeot-barcelona.png"></div>
+            <div class="w3-bar-item"><img class="w3-image" src="images/marques/0000_concesionario-nissan-barcelona.png"></div>
+            <div class="w3-bar-item"><img class="w3-image" src="images/marques/0000_concesionario-toyota-barcelona.jpg"></div>
         </div>
-    	<div class="w3-row-padding">
-            <div class="w3-col s3"><img class="w3-image w3-grayscale-max w3-opacity-max" src="images/marques/0000_concesionario-hyundai-barcelona.jpg"></div>
-            <div class="w3-col s3"><img class="w3-image w3-grayscale-max w3-opacity-max" src="images/marques/0000_concesionario-citroen-barcelona.png"></div>
-            <div class="w3-col s3"><img class="w3-image w3-grayscale-max w3-opacity-max" src="images/marques/0000_concesionario-audi-barcelona.jpg"></div>
-            <div class="w3-col s3"><img class="w3-image w3-grayscale-max w3-opacity-max" src="images/marques/0000_concesionario-honda-barcelona.jpg"></div>
+    	<div class="w3-bar">
+            <div class="w3-bar-item"><img class="w3-image w3-grayscale-max w3-opacity-max" src="images/marques/0000_concesionario-hyundai-barcelona.jpg"></div>
+            <div class="w3-bar-item"><img class="w3-image w3-grayscale-max w3-opacity-max" src="images/marques/0000_concesionario-citroen-barcelona.png"></div>
+            <div class="w3-bar-item"><img class="w3-image w3-grayscale-max w3-opacity-max" src="images/marques/0000_concesionario-audi-barcelona.jpg"></div>
+            <div class="w3-bar-item"><img class="w3-image w3-grayscale-max w3-opacity-max" src="images/marques/0000_concesionario-honda-barcelona.jpg"></div>
         </div>
     	</div>
 	</div>
@@ -164,13 +166,16 @@
     	</div>
 	</div>
 	
-
-	<div class="w3-section" style="position:relative;top:-30px">
-        <div class="w3-container w3-padding-16">
-        	<div class="w3-card w3-round-xlarge">
-        		<div><img class="w3-image" src="images/vehicles/toyotaRav4-500x375.png"></div>
+	<!-- Start of top swapi -->
+	<div class="w3-bar w3-center" style="position:relative;top:-30px">
+		<!-- Start of dynamic card -->
+		<!-- Loop here through each record returned from top_swapi view in the db -->
+        <div class="w3-bar-item">
+        	<div class="w3-card w3-center w3-round-xlarge" style="max-width: 480px;">
+        		<div><img class="w3-image" style="width:90%" src="images/vehicles/toyotaRav4-500x375.png"></div>
         		<div class="w3-container">
-        			<button class="w3-button w3-white w3-border-theme w3-round-xxlarge">Toyota RAV4</button>
+        			<button class="w3-button w3-white w3-border-theme w3-round-xxlarge" 
+        			onClick="window.location.href='/UserSpice44/booking.php'">Toyota RAV4</button>
         		</div>
         		<div class="w3-panel w3-text-grey w3-medium w3-center">
         			<b class="w3-text-theme">desde 540€</b> /mes IVA incl.
@@ -178,9 +183,10 @@
         		<div>&nbsp;</div>
         	</div>
     	</div>
-        <div class="w3-container w3-padding-16">
-        	<div class="w3-card  w3-round-xlarge">
-        		<div><img class="w3-image" src="images/vehicles/Nissan_Xtrail-500x375.png"></div>
+    	<!-- End of dynamic card -->
+        <div class="w3-bar-item">
+        	<div class="w3-card  w3-center w3-round-xlarge" style="max-width: 480px;">
+        		<div><img class="w3-image" style="width:90%" src="images/vehicles/Nissan_Xtrail-500x375.png"></div>
         		<div class="w3-container">
         			<button class="w3-button w3-white w3-border-theme w3-round-xxlarge">Nissan X Trail</button>
         		</div>
@@ -190,9 +196,9 @@
         		<div>&nbsp;</div>
         	</div>
     	</div>
-        <div class="w3-container w3-padding-16">
-        	<div class="w3-card  w3-round-xlarge">
-        		<div><img class="w3-image" src="images/vehicles/5008-519x389.png"></div>
+        <div class="w3-bar-item">
+        	<div class="w3-card  w3-center w3-round-xlarge" style="max-width: 480px;">
+        		<div><img class="w3-image" style="width:90%" src="images/vehicles/5008-519x389.png"></div>
         		<div class="w3-container">
         			<button class="w3-button w3-white w3-border-theme w3-round-xxlarge">Peugeot 5008</button>
         		</div>
@@ -202,9 +208,9 @@
         		<div>&nbsp;</div>
         	</div>
     	</div>
-        <div class="w3-container w3-padding-16">
-        	<div class="w3-card  w3-round-xlarge">
-        		<div><img class="w3-image" src="images/vehicles/508-1-500x375.png"></div>
+        <div class="w3-bar-item">
+        	<div class="w3-card  w3-center w3-round-xlarge" style="max-width: 480px;">
+        		<div><img class="w3-image" style="width:90%" src="images/vehicles/508-1-500x375.png"></div>
         		<div class="w3-container">
         			<button class="w3-button w3-white w3-border-theme w3-round-xxlarge">Peugeot 508</button>
         		</div>
@@ -214,9 +220,9 @@
         		<div>&nbsp;</div>
         	</div>
     	</div>
-        <div class="w3-container w3-padding-16">
-        	<div class="w3-card  w3-round-xlarge">
-        		<div><img class="w3-image" src="images/vehicles/bmv_serie1i-500x375.png"></div>
+        <div class="w3-bar-item">
+        	<div class="w3-card  w3-center w3-round-xlarge" style="max-width: 480px;">
+        		<div><img class="w3-image" style="width:90%" src="images/vehicles/bmv_serie1i-500x375.png"></div>
         		<div class="w3-container">
         			<button class="w3-button w3-white w3-border-theme w3-round-xxlarge">BMW 118i</button>
         		</div>
@@ -226,9 +232,9 @@
         		<div>&nbsp;</div>
         	</div>
     	</div>
-        <div class="w3-container w3-padding-16">
-        	<div class="w3-card  w3-round-xlarge">
-        		<div><img class="w3-image" src="images/vehicles/BMW-X2-SDrive-20d-2018-1-519x389.png"></div>
+        <div class="w3-bar-item">
+        	<div class="w3-card  w3-center w3-round-xlarge" style="max-width: 480px;">
+        		<div><img class="w3-image" style="width:90%" src="images/vehicles/BMW-X2-SDrive-20d-2018-1-519x389.png"></div>
         		<div class="w3-container">
         			<button class="w3-button w3-white w3-border-theme w3-round-xxlarge">X2 sDrive18i</button>
         		</div>
@@ -238,9 +244,9 @@
         		<div>&nbsp;</div>
         	</div>
     	</div>
-        <div class="w3-container w3-padding-16">
-        	<div class="w3-card  w3-round-xlarge">
-        		<div><img class="w3-image" src="images/vehicles/qashqai-519x389.png"></div>
+        <div class="w3-bar-item">
+        	<div class="w3-card  w3-center w3-round-xlarge" style="max-width: 480px;">
+        		<div><img class="w3-image" style="width:90%" src="images/vehicles/qashqai-519x389.png"></div>
         		<div class="w3-container">
         			<button class="w3-button w3-white w3-border-theme w3-round-xxlarge">Nissan QUASHQAI</button>
         		</div>
@@ -252,7 +258,7 @@
     	</div>
 	</div>
 
-    	
+    <!-- End of top swapi -->	
 	<div class="w3-center w3-text-theme" style="position:relative;top:-30px">
     	<div><i class='fas fa-caret-up' style='font-size:36px'></i></div>
 	</div>
